@@ -184,3 +184,18 @@
   background: var(--color-accent);
   color: #0A192F;
 }
+
+/* FAQ Dark Mode Refinement */
+[data-theme="dark"] .faq-item {
+  background: #0E1E38;
+  border-color: #1E293B;
+}
+
+[data-theme="dark"] .faq-item[open] {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+[data-theme="dark"] .faq-answer {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}

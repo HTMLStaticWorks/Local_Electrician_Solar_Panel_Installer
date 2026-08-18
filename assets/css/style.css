@@ -19,8 +19,8 @@
   --color-accent-light: #FEF3C7;     /* Soft Sun Glow */
   --color-accent-glow: rgba(245, 158, 11, 0.25);
   
-  --color-secondary: #0D9488;        /* Clean Energy Teal Accent */
-  --color-success: #10B981;          /* Efficiency Green */
+  --color-secondary: var(--color-accent);        /* Clean Energy Teal Accent */
+  --color-success: var(--color-accent);          /* Efficiency Green */
   --color-danger: #EF4444;           /* Alert Red */
   
   /* Neutral & Surface Tokens (Light Mode Defaults) */
@@ -362,6 +362,7 @@ p:last-child {
 .brand-logo {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 800;
@@ -379,7 +380,6 @@ p:last-child {
   justify-content: center;
   color: var(--color-accent);
   box-shadow: 0 4px 10px rgba(10, 25, 47, 0.15);
-  margin-inline-end: 0.75rem;
 }
 
 .brand-logo span {
@@ -939,13 +939,13 @@ body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamb
   gap: var(--space-xl);
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .grid-cards-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .grid-cards-4 {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -957,16 +957,22 @@ body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamb
   gap: var(--space-xl);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .grid-cards-5 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .grid-cards-5 > *:last-child {
+  .grid-cards-5 > *:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     max-width: calc(50% - (var(--space-xl) / 2));
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid-cards-5 {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -976,13 +982,13 @@ body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamb
   gap: var(--space-xl);
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .grid-cards-6 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .grid-cards-6 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -994,7 +1000,20 @@ body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamb
   gap: var(--space-xl);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) and (max-width: 1024px) {
+  .grid-cards-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-cards-3 > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - (var(--space-xl) / 2));
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
   .grid-cards-3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1114,20 +1133,60 @@ body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamb
     flex-shrink: 0;
   }
 
-  /* Solar Benefits Section Centering */
-  #solar-benefits .reveal-on-scroll:first-child {
+  /* Solar Benefits Section Centering & Collapsing */
+  #solar-benefits .grid-cards-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
     text-align: center;
+  }
+  #solar-benefits .grid-cards-2 > *:first-child {
+    order: 2;
+  }
+  #solar-benefits .grid-cards-2 > *:last-child {
+    order: 1;
   }
   #solar-benefits .eyebrow {
     justify-content: center;
+    display: inline-flex;
   }
-  #solar-benefits h4,
-  #solar-benefits h4 + p {
-    text-align: left;
+  #solar-benefits .reveal-on-scroll > div:last-of-type {
+    display: inline-flex !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+    text-align: start;
+    margin: var(--space-lg) auto 0 auto !important;
   }
 }
 
 /* Service and Trust Card Styles */
+.service-card {
+  display: block;
+  position: relative;
+  padding-bottom: calc(var(--space-xl) + 2.5rem) !important;
+}
+
+.service-card .card-title,
+.service-card .card-text {
+  display: inline;
+}
+
+.service-card .card-title {
+  margin-bottom: 0;
+  margin-inline-end: 0.5rem;
+}
+
+.service-card .card-text {
+  margin-bottom: 0;
+  flex-grow: 0;
+}
+
+.service-card .card-link {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .service-card,
 .trust-card {
   text-align: center;
@@ -1437,8 +1496,8 @@ body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamb
 }
 
 .step-number {
-  width: 54px;
-  height: 54px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: var(--color-primary);
   color: var(--color-accent);
@@ -1592,11 +1651,22 @@ body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamb
   border-radius: var(--radius-md);
   padding: var(--space-md);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-xs);
+}
+
+.calc-mini-stat > div {
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calc-disclaimer {
   font-size: 0.75rem;
-  color: #94A3B8;
+  color: var(--color-text-muted);
   text-align: center;
   margin-top: var(--space-md);
 }
@@ -1924,5 +1994,139 @@ textarea.form-control {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* --- FAQ Accordion Section --- */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.faq-item[open] {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.05);
+}
+
+.faq-question {
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+  list-style: none; /* Hide default arrow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: color var(--transition-fast);
+}
+
+.faq-question::-webkit-details-marker {
+  display: none; /* Hide default arrow in WebKit */
+}
+
+/* Custom interactive arrow */
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-accent);
+  transition: transform var(--transition-base);
+}
+
+.faq-item[open] .faq-question::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faq-question:hover {
+  color: var(--color-accent);
+}
+
+.faq-answer {
+  padding: 0 var(--space-lg) var(--space-md) var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(10, 25, 47, 0.03);
+  padding-top: var(--space-sm);
+  line-height: 1.6;
+}
+
+/* Solar Value Section Responsive Grid Collapsing */
+@media (max-width: 1024px) {
+  #solar-value .grid-cards-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+}
+
+/* Subsidies Info Section Responsive Grid Collapsing & Ordering */
+@media (max-width: 1024px) {
+  #subsidies-info .grid-cards-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+  #subsidies-info .grid-cards-2 > *:first-child {
+    order: 2;
+  }
+  #subsidies-info .grid-cards-2 > *:last-child {
+    order: 1;
+  }
+  #subsidies-info ul {
+    display: inline-flex !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+    margin: var(--space-lg) auto !important;
+    text-align: start;
+  }
+}
+
+/* How Subsidies Work Section Responsive Grid Collapsing & Ordering */
+@media (max-width: 1024px) {
+  #how-subsidies-work .grid-cards-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+  #how-subsidies-work .grid-cards-2 > *:first-child {
+    order: 2;
+  }
+  #how-subsidies-work .grid-cards-2 > *:last-child {
+    order: 1;
+  }
+}
+
+/* Company Story Section Responsive Grid Collapsing & Ordering */
+@media (max-width: 1024px) {
+  #company-story .grid-cards-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+  #company-story .grid-cards-2 > *:first-child {
+    order: 2;
+  }
+  #company-story .grid-cards-2 > *:last-child {
+    order: 1;
+  }
+  #company-story .eyebrow {
+    justify-content: center;
+    display: inline-flex;
+  }
+  #company-story .reveal-on-scroll > div:last-of-type > div {
+    text-align: start;
   }
 }
