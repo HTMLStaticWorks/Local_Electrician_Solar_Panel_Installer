@@ -316,6 +316,21 @@ p:last-child {
   align-items: center;
 }
 
+@media (max-width: 767px) {
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+    min-width: 0;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    text-align: center;
+  }
+}
+
 /* --- Header & Navigation --- */
 .site-header {
   position: fixed;
@@ -347,7 +362,6 @@ p:last-child {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 800;
@@ -365,6 +379,7 @@ p:last-child {
   justify-content: center;
   color: var(--color-accent);
   box-shadow: 0 4px 10px rgba(10, 25, 47, 0.15);
+  margin-inline-end: 0.75rem;
 }
 
 .brand-logo span {
@@ -377,7 +392,7 @@ p:last-child {
   gap: 1.75rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .nav-menu {
     display: flex;
   }
@@ -407,6 +422,40 @@ p:last-child {
   border-radius: 2px;
 }
 
+/* Transparent Header Compatibility (when overlaying dark hero backgrounds before scroll) */
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .nav-link:hover,
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .nav-link.active {
+  color: var(--color-accent);
+}
+
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .brand-logo {
+  color: #FFFFFF;
+}
+
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .theme-toggle-btn,
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .rtl-toggle-btn,
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamburger-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .theme-toggle-btn:hover,
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .rtl-toggle-btn:hover,
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamburger-line {
+  background: #FFFFFF;
+}
+
 /* Dropdown */
 .nav-item-dropdown {
   position: relative;
@@ -420,7 +469,7 @@ p:last-child {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  min-width: 200px;
+  min-width: 120px;
   padding: 0.5rem;
   opacity: 0;
   visibility: hidden;
@@ -448,6 +497,11 @@ p:last-child {
 .dropdown-link:hover {
   background: var(--color-bg-alt);
   color: var(--color-accent-hover);
+}
+
+.dropdown-link.active {
+  background: var(--color-accent-light);
+  color: #B45309;
 }
 
 .header-actions {
@@ -500,7 +554,7 @@ p:last-child {
   transition: all var(--transition-fast);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .hamburger-btn {
     display: none;
   }
@@ -537,6 +591,7 @@ p:last-child {
   justify-content: space-between;
   box-shadow: var(--shadow-xl);
   transition: transform var(--transition-smooth);
+  overflow-y: auto;
 }
 
 .mobile-drawer.active {
@@ -569,7 +624,7 @@ p:last-child {
 .mobile-nav-link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 600;
@@ -688,6 +743,13 @@ p:last-child {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   width: 100%;
   max-width: 440px;
+  transition: all var(--transition-base);
+}
+
+.glass-card-main:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), var(--shadow-glow);
+  border-color: rgba(245, 158, 11, 0.4);
 }
 
 .glass-card-header {
@@ -815,6 +877,12 @@ p:last-child {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+.hero-dashboard-bar:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), var(--shadow-glow);
 }
 
 @media (min-width: 768px) {
@@ -889,7 +957,7 @@ p:last-child {
   gap: var(--space-xl);
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
+@media (min-width: 640px) {
   .grid-cards-5 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -899,12 +967,6 @@ p:last-child {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .grid-cards-5 {
-    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -965,12 +1027,12 @@ p:last-child {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
   border-color: var(--color-accent);
 }
 
 /* Centered cards on Mobile & Tablet */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .card,
   .service-card,
   .trust-card,
@@ -990,12 +1052,92 @@ p:last-child {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* Home 1 Hero Content Centering */
+  .hero-content {
+    text-align: center;
+  }
+  .hero-content .eyebrow {
+    justify-content: center;
+  }
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-content .btn-group {
+    justify-content: center;
+  }
+  .hero-content .trust-badges-row {
+    justify-content: center;
+  }
+
+  /* Subsidies Section Centering */
+  #subsidies-info .reveal-on-scroll:first-child {
+    text-align: center;
+  }
+  #subsidies-info .eyebrow {
+    justify-content: center;
+  }
+  
+  #how-subsidies-work .reveal-on-scroll:first-child h2,
+  #how-subsidies-work .reveal-on-scroll:first-child > p,
+  #company-story .reveal-on-scroll:first-child h2,
+  #company-story .reveal-on-scroll:first-child > p,
+  #about-sustainability > .container > div > h2,
+  #about-sustainability > .container > div > p:first-of-type,
+  #about-safety > .container > div > h2,
+  #about-safety > .container > div > p:first-of-type,
+  #service-area .reveal-on-scroll:first-child h2,
+  #service-area .reveal-on-scroll:first-child > p {
+    text-align: center;
+  }
+  #how-subsidies-work .eyebrow,
+  #company-story .eyebrow,
+  #about-sustainability .eyebrow,
+  #about-safety .eyebrow,
+  #service-area .eyebrow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  #subsidies-info ul {
+    max-width: fit-content;
+    margin: var(--space-lg) auto !important;
+    text-align: left;
+  }
+  #subsidies-info li {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  #subsidies-info li svg {
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  /* Solar Benefits Section Centering */
+  #solar-benefits .reveal-on-scroll:first-child {
+    text-align: center;
+  }
+  #solar-benefits .eyebrow {
+    justify-content: center;
+  }
+  #solar-benefits h4,
+  #solar-benefits h4 + p {
+    text-align: left;
+  }
 }
 
-/* Service Card Styles */
-.service-card {
+/* Service and Trust Card Styles */
+.service-card,
+.trust-card {
   text-align: center;
   align-items: center;
+}
+
+.service-card .card-icon,
+.trust-card .card-icon {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card-icon {
@@ -1044,6 +1186,10 @@ p:last-child {
   color: #B45309;
 }
 
+.card-link span {
+  display: none;
+}
+
 /* --- Project & Gallery Components --- */
 .project-card {
   background: var(--color-surface);
@@ -1058,7 +1204,7 @@ p:last-child {
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
   border-color: var(--color-accent);
 }
 
@@ -1150,6 +1296,15 @@ p:last-child {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  transition: all var(--transition-base);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: var(--color-accent);
 }
 
 .star-rating {
@@ -1157,6 +1312,12 @@ p:last-child {
   gap: 4px;
   color: var(--color-accent);
   margin-bottom: var(--space-md);
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.testimonial-card:hover .star-rating {
+  transform: scale(1.05);
 }
 
 .testimonial-text {
@@ -1183,6 +1344,11 @@ p:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: cover;
+}
+
+.author-info {
+  text-align: left;
 }
 
 .author-info h4 {
@@ -1265,9 +1431,9 @@ p:last-child {
 }
 
 .step-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--color-accent);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
 .step-number {
@@ -1284,6 +1450,13 @@ p:last-child {
   justify-content: center;
   margin: 0 auto var(--space-md) auto;
   border: 4px solid var(--color-bg);
+  transition: all var(--transition-base);
+}
+
+.step-card:hover .step-number {
+  transform: scale(1.08);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
 }
 
 /* --- Interactive Two-Path Selector (Home 2) --- */
@@ -1337,6 +1510,12 @@ p:last-child {
   padding: var(--space-2xl);
 }
 
+@media (max-width: 1024px) {
+  .calculator-wrapper {
+    padding: var(--space-lg);
+  }
+}
+
 .calculator-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1356,6 +1535,7 @@ p:last-child {
 .calc-label {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   font-weight: 600;
   margin-bottom: var(--space-xs);
 }
@@ -1367,6 +1547,7 @@ p:last-child {
   background: var(--color-border);
   outline: none;
   -webkit-appearance: none;
+  appearance: none;
   accent-color: var(--color-accent);
 }
 
@@ -1378,6 +1559,12 @@ p:last-child {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .calc-result-box {
+    padding: var(--space-lg);
+  }
 }
 
 .calc-hero-stat {
@@ -1395,7 +1582,7 @@ p:last-child {
 
 .calc-metric-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: var(--space-md);
   margin: var(--space-lg) 0;
 }
@@ -1507,7 +1694,7 @@ textarea.form-control {
 
 .team-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
   border-color: var(--color-accent);
 }
 
@@ -1548,11 +1735,11 @@ textarea.form-control {
 
 /* --- Footer System --- */
 .site-footer {
-  background: var(--color-primary-dark);
-  color: #94A3B8;
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
   padding-top: var(--space-4xl);
   padding-bottom: var(--space-xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border);
   margin-top: auto;
 }
 
@@ -1575,8 +1762,12 @@ textarea.form-control {
   }
 }
 
+.site-footer .brand-logo {
+  color: var(--color-primary) !important;
+}
+
 .footer-brand p {
-  color: #94A3B8;
+  color: var(--color-text-muted);
   font-size: 0.9375rem;
   margin-top: var(--space-md);
   margin-bottom: var(--space-lg);
@@ -1587,7 +1778,7 @@ textarea.form-control {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: var(--space-lg);
 }
 
@@ -1599,13 +1790,14 @@ textarea.form-control {
 
 .footer-link {
   font-size: 0.9375rem;
-  color: #94A3B8;
-  transition: color var(--transition-fast);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: all var(--transition-fast);
 }
 
 .footer-link:hover {
-  color: var(--color-accent);
-  transform: translateX(3px);
+  color: var(--color-primary);
+  transform: translateX(4px);
 }
 
 .footer-contact-item {
@@ -1649,8 +1841,8 @@ textarea.form-control {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: #FFFFFF;
+  background: var(--color-border);
+  color: var(--color-text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1704,6 +1896,16 @@ textarea.form-control {
 .text-accent { color: var(--color-accent); }
 .text-success { color: var(--color-success); }
 .text-white { color: #FFFFFF; }
+
+/* Display Utilities */
+.d-none {
+  display: none !important;
+}
+@media (min-width: 1025px) {
+  .d-lg-inline-flex {
+    display: inline-flex !important;
+  }
+}
 
 .reveal-on-scroll {
   opacity: 0;
