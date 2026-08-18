@@ -1,0 +1,64 @@
+/* ==========================================================================
+   VOLTSOLAR ENERGY - RTL STYLESHEET
+   Right-To-Left Support for Arabic, Hebrew & Bi-Directional Layouts
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .brand-logo {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: -320px;
+}
+
+[dir="rtl"] .mobile-drawer.active {
+  transform: translateX(320px);
+}
+
+[dir="rtl"] .scroll-top-btn {
+  right: auto;
+  left: 2rem;
+}
+
+[dir="rtl"] .project-tag {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .footer-link:hover {
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .card-link svg {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .btn svg {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .trust-badge-item,
+[dir="rtl"] .footer-contact-item,
+[dir="rtl"] .testimonial-author {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .text-center {
+  text-align: center;
+}
+
+[dir="rtl"] .section-header {
+  text-align: center;
+}

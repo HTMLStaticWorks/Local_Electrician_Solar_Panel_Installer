@@ -1,0 +1,145 @@
+/* ==========================================================================
+   VOLTSOLAR ENERGY - DARK THEME STYLESHEET
+   High Contrast, Sleek Midnight Theme with Solar Amber Accents
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* Neutral & Surface Tokens for Dark Mode */
+  --color-bg: #070F1E;              /* Deep Obsidian Navy */
+  --color-bg-alt: #0B172C;          /* Midnight Navy Alt */
+  --color-surface: #0E1E38;         /* Dark Navy Elevated Surface */
+  --color-surface-hover: #132747;
+  --color-surface-glass: rgba(11, 23, 44, 0.88);
+  --color-glass-border: rgba(255, 255, 255, 0.12);
+  
+  --color-text: #F1F5F9;            /* High Contrast Off-White */
+  --color-text-muted: #94A3B8;      /* Cool Slate 400 */
+  --color-text-subtle: #64748B;     /* Slate 500 */
+  --color-border: #1E293B;          /* Dark Slate Border */
+  --color-border-hover: #334155;
+  
+  /* Text Heading Overrides */
+  h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
+  }
+
+  /* Shadows for Dark Mode */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px -2px rgba(0, 0, 0, 0.4), 0 2px 6px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 48px -12px rgba(0, 0, 0, 0.65);
+}
+
+/* Dark Mode Component Refinements */
+[data-theme="dark"] .brand-logo {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .brand-logo-icon {
+  background: linear-gradient(135deg, #132B4F 0%, #1E3A8A 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+[data-theme="dark"] .nav-link {
+  color: #E2E8F0;
+}
+
+[data-theme="dark"] .dropdown-menu {
+  background: #0E1E38;
+  border-color: #1E293B;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .dropdown-link {
+  color: #E2E8F0;
+}
+[data-theme="dark"] .dropdown-link:hover {
+  background: #132747;
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .theme-toggle-btn,
+[data-theme="dark"] .rtl-toggle-btn,
+[data-theme="dark"] .hamburger-btn {
+  background: #0E1E38;
+  border-color: #1E293B;
+  color: #E2E8F0;
+}
+
+[data-theme="dark"] .hamburger-line {
+  background: #FFFFFF;
+}
+
+[data-theme="dark"] .mobile-drawer {
+  background: #0B172C;
+}
+
+[data-theme="dark"] .mobile-nav-link {
+  color: #F1F5F9;
+}
+[data-theme="dark"] .mobile-nav-link:hover,
+[data-theme="dark"] .mobile-nav-link.active {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .eyebrow-badge {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .card-icon {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .card:hover .card-icon {
+  background: var(--color-accent);
+  color: #0A192F;
+}
+
+[data-theme="dark"] .form-control {
+  background: #0B172C;
+  border-color: #1E293B;
+  color: #FFFFFF;
+}
+[data-theme="dark"] .form-control:focus {
+  background: #0E1E38;
+  border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .filter-btn {
+  background: #0E1E38;
+  border-color: #1E293B;
+  color: #94A3B8;
+}
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="dark"] .filter-btn.active {
+  background: var(--color-accent);
+  color: #0A192F;
+  border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .metrics-strip {
+  background: #0E1E38;
+  border-color: #1E293B;
+}
+[data-theme="dark"] .metric-number {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .step-number {
+  background: #132B4F;
+  border-color: #070F1E;
+}
+
+[data-theme="dark"] .btn-outline {
+  color: #FFFFFF;
+  border-color: #334155;
+}
+[data-theme="dark"] .btn-outline:hover {
+  background: #0E1E38;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}

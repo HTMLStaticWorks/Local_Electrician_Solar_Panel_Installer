@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar ROI & Savings Calculator | VoltSolar Energy</title>
+  <meta name="description" content="Calculate your potential rooftop solar panel capacity, monthly power bill savings, 25-year lifetime return, and payback period with our interactive calculator.">
+  <meta name="keywords" content="solar savings calculator, solar ROI, estimated power savings, solar payback calculator">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="VoltSolar Homepage">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <span>Volt</span>Solar
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <div class="nav-item-dropdown">
+          <a href="index.html" class="nav-link">Home ▾</a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-link">Home 1 (Cinematic)</a>
+            <a href="home-2.html" class="dropdown-link">Home 2 (Editorial & Dashboard)</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="solar.html" class="nav-link">Solar</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="calculator.html" class="nav-link active">Calculator</a>
+        <a href="subsidies.html" class="nav-link">Subsidies</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+        <button class="rtl-toggle-btn" aria-label="Toggle RTL Mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg></button>
+        <a href="booking.html" class="btn btn-primary btn-sm d-none d-lg-inline-flex">Free Site Assessment</a>
+        <button class="hamburger-btn" aria-label="Open Mobile Menu"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <div class="mobile-drawer">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo"><div class="brand-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div><span>Volt</span>Solar</a>
+        <button class="close-drawer-btn" aria-label="Close Menu">✕</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home 1 (Cinematic)</a></li>
+        <li><a href="home-2.html" class="mobile-nav-link">Home 2 (Editorial)</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="solar.html" class="mobile-nav-link">Solar Energy</a></li>
+        <li><a href="projects.html" class="mobile-nav-link">Projects Gallery</a></li>
+        <li><a href="calculator.html" class="mobile-nav-link active">Solar Calculator</a></li>
+        <li><a href="subsidies.html" class="mobile-nav-link">Solar Subsidies</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div style="margin-top: var(--space-xl);"><a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Free Assessment</a></div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         CALCULATOR - SECTION 1: CALCULATOR HERO
+         ========================================================================== -->
+    <section class="page-hero" id="calc-hero">
+      <div class="container reveal-on-scroll">
+        <div class="eyebrow" style="color: var(--color-accent); justify-content: center;">
+          <span class="eyebrow-badge">REAL-TIME SOLAR ROI ENGINE</span>
+        </div>
+        <h1>Interactive Residential Solar Savings Calculator</h1>
+        <p>
+          Simulate your rooftop solar output, estimate your monthly electricity savings, and discover your financial payback timeframe based on current local utility rates.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALCULATOR - SECTION 2: ENERGY USAGE INPUTS
+         ========================================================================== -->
+    <section class="section" style="padding-bottom: 0;" id="calc-inputs-intro">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="eyebrow">CUSTOM ESTIMATION PARAMETERS</div>
+          <h2>Configure Your Household Energy Profile</h2>
+          <p>Adjust the sliders below to mirror your monthly electric bills and property specifications.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALCULATOR - SECTION 3: SOLAR SAVINGS CALCULATOR ENGINE
+         ========================================================================== -->
+    <section class="section" id="calc-engine">
+      <div class="container">
+        <div class="calculator-wrapper reveal-on-scroll">
+          <div class="calculator-grid">
+            <!-- Left: Interactive Inputs -->
+            <div>
+              <div class="calc-input-group">
+                <div class="calc-label">
+                  <span>Current Monthly Power Bill</span>
+                  <strong id="calc-bill-val" class="text-accent" style="font-size: 1.35rem;">$220</strong>
+                </div>
+                <input type="range" class="calc-range" id="calc-bill-slider" min="50" max="1000" step="10" value="220">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--color-text-subtle); margin-top: 4px;">
+                  <span>$50/mo</span>
+                  <span>$500/mo</span>
+                  <span>$1,000/mo</span>
+                </div>
+              </div>
+
+              <div class="form-row form-row-2" style="margin-bottom: var(--space-lg);">
+                <div class="form-group">
+                  <label class="form-label" for="calc-prop">Property Style</label>
+                  <select class="form-control" id="calc-prop">
+                    <option value="1">Single Family Detached</option>
+                    <option value="0.85">Townhouse / Semi-Detached</option>
+                    <option value="1.4">Large Multi-Story</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="calc-roof">Roof Type</label>
+                  <select class="form-control" id="calc-roof">
+                    <option value="1">Tile / Asphalt Shingle</option>
+                    <option value="1.05">Standing Seam Metal</option>
+                    <option value="0.95">Flat Membrane</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="calc-sun">Daily Sun Exposure</label>
+                  <select class="form-control" id="calc-sun">
+                    <option value="1">Full Sun (Zero Shading)</option>
+                    <option value="0.9">Moderate (Partial Tree Shade)</option>
+                    <option value="0.8">Filtered Sun / Valley</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="calc-battery">Include Battery Backup?</label>
+                  <select class="form-control" id="calc-battery">
+                    <option value="no">Grid-Tie Only (Standard)</option>
+                    <option value="yes">Add 13.5 kWh Battery Storage</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Results Panel -->
+            <div class="calc-result-box">
+              <div>
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: #94A3B8; text-align: center; letter-spacing: 0.05em;">Estimated Annual Savings</div>
+                <div class="calc-hero-stat">
+                  <div class="calc-hero-val" id="calc-annual-savings">$2,064</div>
+                  <div style="font-size: 0.85rem; color: #E2E8F0; margin-top: 4px;">Potential Yearly Bill Offset</div>
+                </div>
+
+                <div class="calc-metric-row">
+                  <div class="calc-mini-stat">
+                    <div style="font-size: 0.75rem; color: #94A3B8;">Recommended Array</div>
+                    <strong id="calc-system-size" style="font-size: 1.15rem; color: #FFFFFF;">6.7 kW</strong>
+                  </div>
+                  <div class="calc-mini-stat">
+                    <div style="font-size: 0.75rem; color: #94A3B8;">Estimated Panels</div>
+                    <strong id="calc-panel-count" style="font-size: 1.15rem; color: #FFFFFF;">16 Panels</strong>
+                  </div>
+                  <div class="calc-mini-stat">
+                    <div style="font-size: 0.75rem; color: #94A3B8;">Monthly Savings</div>
+                    <strong id="calc-monthly-savings" class="text-accent" style="font-size: 1.15rem;">$172</strong>
+                  </div>
+                  <div class="calc-mini-stat">
+                    <div style="font-size: 0.75rem; color: #94A3B8;">Est. Payback Period</div>
+                    <strong id="calc-payback" class="text-success" style="font-size: 1.15rem;">5.6 Years</strong>
+                  </div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.05); padding: var(--space-md); border-radius: var(--radius-md); text-align: center; margin-bottom: var(--space-md);">
+                  <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase;">25-Year Cumulative Savings</div>
+                  <strong id="calc-lifetime-savings" class="text-accent" style="font-size: 1.45rem; font-family: var(--font-display);">$53,148</strong>
+                </div>
+              </div>
+
+              <a href="booking.html" class="btn btn-primary" style="width: 100%;">Lock In This Estimate & Book Assessment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALCULATOR - SECTION 4: RESULTS / EXPLANATION & BREAKDOWN
+         ========================================================================== -->
+    <section class="section section-alt" id="calc-explanation">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="eyebrow">METHODOLOGY</div>
+          <h2>How Your Solar ROI is Calculated</h2>
+          <p>Our calculation engine models standard residential performance metrics based on historical irradiance data.</p>
+        </div>
+
+        <div class="grid-cards-3 reveal-on-scroll">
+          <div class="card">
+            <h3 class="card-title">1. Production Modeling</h3>
+            <p class="card-text">We model generation using high-efficiency 420W+ Tier 1 monocrystalline panels with average regional sun peak hours of 4.2 to 4.8 hours/day.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">2. Escalating Utility Rates</h3>
+            <p class="card-text">Lifetime calculations account for conservative 3% annual grid utility inflation rates that traditional fossil-fuel energy bills experience.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">3. Net Metering Assumptions</h3>
+            <p class="card-text">Assumes approximately 70% immediate daytime home self-consumption and 30% grid export at current standard feed-in tariff credits.</p>
+          </div>
+        </div>
+
+        <div class="calc-disclaimer" style="margin-top: var(--space-xl);">
+          <strong>Disclaimer:</strong> The calculations provided above are estimated results intended for illustrative and planning purposes only. Exact savings, system size, and payback periods depend on on-site roof shade analysis, pitch orientation, and seasonal energy habits. Estimates are not guaranteed.
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALCULATOR - SECTION 5: ASSESSMENT CTA
+         ========================================================================== -->
+    <section class="section section-dark" id="calc-cta">
+      <div class="container text-center reveal-on-scroll">
+        <div class="eyebrow" style="color: var(--color-accent);">CONFIRM YOUR NUMBERS</div>
+        <h2 style="max-width: 760px; margin: 0 auto var(--space-md) auto;">Get an Exact Certified Engineering Assessment</h2>
+        <p style="max-width: 600px; margin: 0 auto var(--space-xl) auto; font-size: 1.15rem;">
+          Our licensed Master Electricians will perform a physical 3D roof analysis and deliver a binding, fixed-price proposal.
+        </p>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="booking.html" class="btn btn-primary">Book Free Site Assessment</a>
+          <a href="contact.html" class="btn btn-glass">Call (800) 555-VOLT</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #FFFFFF;"><div class="brand-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div><span>Volt</span>Solar</a>
+          <p>Certified local electrical services and high-efficiency residential solar engineering. Making homes safer, smarter, and cleaner since 2016.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#" class="social-btn" aria-label="X (Twitter)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="services.html" class="footer-link">All Services</a>
+            <a href="solar.html" class="footer-link">Solar Solutions</a>
+            <a href="projects.html" class="footer-link">Recent Projects</a>
+            <a href="subsidies.html" class="footer-link">Solar Subsidies</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Services</h4>
+          <div class="footer-links">
+            <a href="service-details.html" class="footer-link">Electrical Repairs</a>
+            <a href="services.html" class="footer-link">Wiring & Rewiring</a>
+            <a href="solar.html" class="footer-link">Solar Installation</a>
+            <a href="services.html" class="footer-link">Panel Upgrades</a>
+            <a href="calculator.html" class="footer-link">Energy Assessment</a>
+            <a href="booking.html" class="footer-link">Book Free Site Visit</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Get In Touch</h4>
+          <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>(800) 555-VOLT / (800) 555-8658</span></div>
+          <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>contact@voltsolar-energy.com</span></div>
+          <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>742 Evergreen Energy Way, Metro Area</span></div>
+          <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>Mon–Sat: 7:00 AM – 7:00 PM (24/7 Emergency Dispatch)</span></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 VoltSolar Energy Solutions. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; color: #64748B;">Licensed Electrical Contractor #EC-98421 • CEC Certified Solar Retailer</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top of page"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
