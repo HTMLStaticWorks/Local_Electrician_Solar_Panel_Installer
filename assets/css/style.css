@@ -1671,6 +1671,27 @@ body:has(.hero-home1, .hero-home2, .page-hero) .site-header:not(.scrolled) .hamb
   margin-top: var(--space-md);
 }
 
+@media (max-width: 768px) {
+  .calculator-wrapper {
+    padding: var(--space-md);
+  }
+  .calc-result-box {
+    padding: var(--space-md);
+  }
+  .calc-metric-row {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+  }
+  .calc-mini-stat {
+    padding: var(--space-sm) 6px;
+  }
+  .calc-mini-stat > div {
+    min-height: 1.8rem;
+    font-size: 0.72rem !important;
+  }
+}
+
 /* --- Forms & Validation --- */
 .form-group {
   margin-bottom: var(--space-lg);
@@ -1800,7 +1821,6 @@ textarea.form-control {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-accent);
-  margin-bottom: var(--space-sm);
 }
 
 /* --- Footer System --- */
